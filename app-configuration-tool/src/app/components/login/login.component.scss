@@ -1,0 +1,16 @@
+
+:host {
+    display: block;
+}
+.login-page {
+    padding: 0px;
+
+    .small-text{
+        font-size: 0.9rem;
+    }
+
+    a {
+        text-decoration: underline;
+        color: #005485;
+    }
+}

@@ -1,0 +1,100 @@
+$topnav-background-color: #005485;
+:host {
+    .navbar {
+        background-color: $topnav-background-color;
+        .navbar-brand {
+            color: #fff;
+            .logo{
+                max-width: 135px;
+            }
+        }
+        .nav-item > a {
+            color: #fff;
+        }
+        .profile-image{
+            border-radius: 18px;
+        }
+        #wrap {
+            position: relative;
+
+            input[type="text"] {
+                height: 55px;
+                font-size: 20px;
+                font-weight: 100;
+                border: none;
+                outline: none;
+                color: #fff;
+                width: 0px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: none;
+                z-index: 3;
+                transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+                cursor: pointer;
+
+            &:focus {
+                width: 300px;
+                z-index: 1;
+                color: #fff;
+                border-bottom: 1px solid #fff;
+                cursor: text;
+
+                    :hover {
+                        border-bottom: 1px solid #fff;
+                    }
+                }
+            }
+              
+            input[type="submit"] {
+                height: 55px;
+                width: 63px;
+                display: inline-block;
+                background: url("/assets/images/svg/icon-search.svg") center center no-repeat;
+                text-indent: -10000px;
+                border: none;
+                cursor: pointer;
+                cursor: pointer;
+                transition: opacity .4s ease;
+            }
+
+            input::-webkit-input-placeholder {
+                color: rgb(245, 245, 245) !important;
+            }
+    
+            input:-moz-placeholder {
+                /* Firefox 18- */
+                color: rgb(245, 245, 245) !important;
+            }
+    
+            input::-moz-placeholder {
+                /* Firefox 19+ */
+                color: rgb(245, 245, 245) !important;
+            }
+    
+            input:-ms-input-placeholder {
+                color: rgb(245, 245, 245) !important;
+            }
+        }    
+    }
+    .header-dropdown {
+        width: 220px;
+        top: 60px !important;
+        left: -30px !important;
+        cursor: pointer !important;
+
+        .dropdown-options {
+            font-size: 14px;
+            line-height: 2rem;
+            font-weight: 600;
+            border-bottom: 1px solid #ddd;
+            // color: $link-color;
+            &:last-child {
+                border-bottom: none;
+            }
+            &:hover {
+                // background-color: blue;
+            }
+        }
+    }
+}

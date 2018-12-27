@@ -1,0 +1,16 @@
+<div class="container-fluid login-page" [@routerTransition]>
+    <div class="d-flex flex-row">
+        <img src="/assets/images/sita-ui-login.png" alt="Sita UI"/>
+        <div class="col-sm-3 offset-sm-1 align-self-center" style="top:-15px;">
+            <alert-message></alert-message>
+            <router-outlet></router-outlet>
+        </div>
+        <div class="ml-auto m-3 align-self-start">
+            <a routerLink='./register' class="btn btn-link small-text">Create an account</a>
+            <a class="btn btn-link small-text">en-GB</a>
+            <img src="/assets/images/lan-GB.png" alt="language"/>
+        </div>
+    </div>
+</div>
+
+    

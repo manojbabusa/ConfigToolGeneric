@@ -1,0 +1,5 @@
+<div *ngIf="message" [@flyIn]="'in'"
+     [ngClass]="{ 'alert' : message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error'}">
+  {{message.text}}
+  <a class="close" (click)="removeAlert()">&times;</a>
+</div>
