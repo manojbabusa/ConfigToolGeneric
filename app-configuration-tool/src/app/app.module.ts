@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { HelperService } from './shared/services/helper.service';
 import { MsAdalAngular6Module,AuthenticationGuard } from 'microsoft-adal-angular6';
+import { ADAuthenticationGuard } from './shared/guard/AD-authenication-guard';
 
 
 // AoT requires an exported function for factories
@@ -42,7 +43,8 @@ export const createTranslateLoader = (http: HttpClient) => {
       tenant: '3b27d02e-0ad3-4e02-947d-dd47cf86624f',      
      // clientId: 'e5ad3d77-0d56-42dc-b542-0fd8371a2a93',
       clientId:'62374115-36a3-4cfa-a2ce-03ef0f2816be',
-      redirectUri: window.location.origin,
+      redirectUri:window.location.origin ,
+      
       /*endpoints: {
         "https://localhost/Api/": "xxx-bae6-4760-b434-xxx"
       },*/
@@ -51,7 +53,7 @@ export const createTranslateLoader = (http: HttpClient) => {
     }),
     AppRoutingModule
   ],
-  providers: [AuthGuard,HelperService,AuthenticationGuard],
+  providers: [AuthGuard,HelperService,ADAuthenticationGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ThemeService } from '../../../../shared/services/layout/theme.service';
 import { Observable, Subject } from 'rxjs';
+import { MsAdalAngular6Service } from 'microsoft-adal-angular6';
 
 @Component({
     selector: 'app-header',
@@ -30,7 +31,8 @@ export class HeaderComponent implements OnInit {
     constructor(
         private translate: TranslateService,
         private themeService : ThemeService,
-        public router: Router
+      public router: Router,
+        private adalService:MsAdalAngular6Service
     ) {
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS']);
         this.translate.setDefaultLang('en');
@@ -93,8 +95,9 @@ export class HeaderComponent implements OnInit {
         dom.classList.toggle('rtl');
     }
 
-    onLoggedout() {
-        localStorage.removeItem('isLoggedin');
+  onLoggedout() {
+    this.adalService.logout();
+       // localStorage.removeItem('isLoggedin');
     }
 
     changeLang(language: string) {
