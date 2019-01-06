@@ -13,7 +13,7 @@ import { AuthGuard } from './shared/guard/auth.guard';
 import { HelperService } from './shared/services/helper.service';
 import { MsAdalAngular6Module,AuthenticationGuard } from 'microsoft-adal-angular6';
 import { ADAuthenticationGuard } from './shared/guard/AD-authenication-guard';
-
+import { environment } from '../environments/environment';
 
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
@@ -40,16 +40,10 @@ export const createTranslateLoader = (http: HttpClient) => {
       }
     }),
     MsAdalAngular6Module.forRoot({
-      tenant: '3b27d02e-0ad3-4e02-947d-dd47cf86624f',      
-     // clientId: 'e5ad3d77-0d56-42dc-b542-0fd8371a2a93',
-      clientId:'62374115-36a3-4cfa-a2ce-03ef0f2816be',
-      redirectUri:window.location.origin ,
-      
-      /*endpoints: {
-        "https://localhost/Api/": "xxx-bae6-4760-b434-xxx"
-      },*/
-     //navigateToLoginRequestUrl: false,
-      cacheLocation: 'localStorage',
+      tenant: environment.adalConfig.tenant,    
+      clientId: environment.adalConfig.clientId,
+      redirectUri: environment.adalConfig.redirectUri ,
+      cacheLocation: environment.adalConfig.cacheLocation,
     }),
     AppRoutingModule
   ],

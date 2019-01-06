@@ -11,7 +11,6 @@ export class AppComponent {
   title = 'app-configuration-tool';
 
   constructor(private adalSvc: MsAdalAngular6Service) {
-
     console.log(this.adalSvc.userInfo);
     var token = this.adalSvc.acquireToken('https://graph.microsoft.com')
     .subscribe( (token: string) => {

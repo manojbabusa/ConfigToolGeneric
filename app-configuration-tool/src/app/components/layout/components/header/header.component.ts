@@ -51,14 +51,11 @@ export class HeaderComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.setThemes();
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        if(currentUser){
-            this.userId = currentUser.userId;
-            this.logInName = currentUser.logInName;
-            this.loggedInEmail = currentUser.email;
-            this.isAdmin = currentUser.isAdmin;
-            this.icon = currentUser.icon;
+        //this.setThemes();
+        if(this.adalService.isAuthenticated){
+          this.userId = this.adalService.LoggedInUserName;
+          this.logInName = this.adalService.LoggedInUserName;
+          this.loggedInEmail = this.adalService.LoggedInUserEmail;
         }
     }
     
@@ -66,7 +63,6 @@ export class HeaderComponent implements OnInit {
      setThemes(): void {
         this.themeService.getThemesList().subscribe(data => {
             this.themesList = data;
-            //this.themeService.getInitalTheme("59897ca6a17fd4c3b9ca057f").subscribe(data => {
             const theme = data[0];
             this.themeName = theme.name;
         });
