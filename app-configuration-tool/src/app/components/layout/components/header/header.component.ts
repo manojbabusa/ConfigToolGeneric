@@ -54,11 +54,30 @@ export class HeaderComponent implements OnInit {
         //this.setThemes();
         if(this.adalService.isAuthenticated){
           this.userId = this.adalService.LoggedInUserName;
-          this.logInName = this.adalService.LoggedInUserName;
+          this.logInName = this.getFirstName(this.adalService.LoggedInUserName)+' '+this.getLastName(this.adalService.LoggedInUserName,' ');
           this.loggedInEmail = this.adalService.LoggedInUserEmail;
         }
+  }
+
+  getFirstName = function (str) {
+    var arr = str.split(' ');
+    if (arr.length === 1) {
+      return arr[0];
     }
-    
+    return this.capitalizeFirstLetter(arr.slice(0, -1).join(' ')); // returns "Paul Steve"
+  }
+
+ 
+  getLastName = function (str, ifNone) {
+    var arr = str.split(' ');
+    if (arr.length === 1) {
+      return ifNone || "<None>";
+    }
+    return this.capitalizeFirstLetter(arr.slice(-1).join(' '));
+  }
+  capitalizeFirstLetter(string) {
+    return string.replace(/^./, string[0].toUpperCase());
+  }
      /*Method to get the themes list from the UiComponentsService and assign it to the themesList declared in this file.*/
      setThemes(): void {
         this.themeService.getThemesList().subscribe(data => {
