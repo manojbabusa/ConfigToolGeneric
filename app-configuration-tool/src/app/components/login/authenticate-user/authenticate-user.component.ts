@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../../shared/animations/router.animations';
 import { MsAdalAngular6Service } from 'microsoft-adal-angular6';
-import { LoaderComponent } from '../../../shared/directives/loader/loader.component';
 
 @Component({
   templateUrl: './authenticate-user.component.html',
@@ -11,7 +10,7 @@ import { LoaderComponent } from '../../../shared/directives/loader/loader.compon
 export class AuthenticateUserComponent {
 
   loading = false;
-  loaderMessage: string = "Redirecting...";
+  public loaderMessage: string = "Redirecting...";
   constructor(
     private adalService: MsAdalAngular6Service
   ) { }
