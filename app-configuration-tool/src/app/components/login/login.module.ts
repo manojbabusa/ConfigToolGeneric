@@ -8,24 +8,26 @@ import { AuthenticateUserComponent } from './authenticate-user/authenticate-user
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AlertService } from '../../shared/services/alert.service';
 import { AlertComponent } from '../../shared/directives/alert.component';
+import { LoaderComponent } from '../../shared/directives/loader/loader.component';
 
 @NgModule({
-    imports: [
-        CommonModule, 
-        FormsModule,
-        ReactiveFormsModule,
-        LoginRoutingModule,
-        FormsModule
-    ],
-    declarations: [
-        LoginComponent,
-        AuthenticateUserComponent,
-        ForgotPasswordComponent,
-        AlertComponent
-    ],
-    providers: [
-        LoginService,
-        AlertService
-    ]
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    LoginRoutingModule,
+    FormsModule
+  ],
+  declarations: [
+    LoginComponent,
+    AuthenticateUserComponent,
+    ForgotPasswordComponent,
+    AlertComponent,
+    LoaderComponent
+  ],
+  providers: [
+    LoginService,
+    AlertService
+  ]
 })
 export class LoginModule {}
