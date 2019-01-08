@@ -28,5 +28,15 @@
     "Pending Task" : "Pending Task",
     "In queue" : "In queue",
     "Mail" : "Mail",
-    "View All" : "View All"
+    "View All" : "View All",
+    "Details":"My Details",
+    "Location":"Location",
+    "Region":"Region",
+    "Schema":"Schema",
+    "Capabilities":"Capabilities",
+    "Application Type":"Application Type",
+    "Logical Type":"Logical Type",
+    "View":"View",
+    "IAG Data":"IAG Data"
+    
 }

@@ -1,108 +1,88 @@
-<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
-    <div class="list-group">
-        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
-            <span>{{ 'Dashboard' | translate }}</span>
-        </a>
-        <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;
-            <span>{{ 'Setup' | translate }}</span>
-        </a>
-        <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-table"></i>&nbsp;
-            <span>{{ 'View' | translate }}</span>
-        </a>
-        <a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-edit"></i>&nbsp;
-            <span>{{ 'Manager User' | translate }}</span>
-        </a>
-        <a [routerLink]="['/bs-element']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-desktop"></i>&nbsp;
-            <span>{{ 'Reference Data' | translate }}</span>
-        </a>
-       
-
-        <div class="header-fields">
-            <a (click)="rltAndLtr()" class="list-group-item">
-                <span><i class="fa fa-arrows-h"></i>&nbsp; RTL/LTR</span>
-            </a>
-            <div class="nested-menu">
-                <a class="list-group-item" (click)="addExpandClass('languages')">
-                    <span><i class="fa fa-language"></i>&nbsp; {{ 'Language' | translate }} <b class="caret"></b></span>
-                </a>
-                <li class="nested" [class.expand]="showMenu === 'languages'">
-                    <ul class="submenu">
-                        <li>
-                            <a href="javascript:void(0)" (click)="changeLang('en')">
-                                {{ 'English' | translate }}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" (click)="changeLang('fr')">
-                                {{ 'French' | translate }}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" (click)="changeLang('ur')">
-                                {{ 'Urdu' | translate }}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" (click)="changeLang('es')">
-                                {{ 'Spanish' | translate }}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" (click)="changeLang('it')">
-                                {{ 'Italian' | translate }}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" (click)="changeLang('fa')">
-                                {{ 'Farsi' | translate }}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" (click)="changeLang('de')">
-                                {{ 'German' | translate }}
-                            </a>
-                        </li>
-                    </ul>
+<div class="d-flex align-items-stretch">
+<div>
+        <nav class="sidebar">         
+    
+            <ul class="list-unstyled components">
+    
+                <li>
+                    <a href="#/">
+                       <span class="d-block"><img src="/assets/images/icon8/icons8-speed.svg" class="menu-icon" alt="..."></span>
+                        <span>{{ 'Dashboard' | translate }}</span>
+                    </a>    
                 </li>
-            </div>
-            <div class="nested-menu">
-                <a class="list-group-item" (click)="addExpandClass('profile')">
-                    <span><i class="fa fa-user"></i>&nbsp; John Smith</span>
-                </a>
-                <li class="nested" [class.expand]="showMenu === 'profile'">
-                    <ul class="submenu">
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span><i class="fa fa-fw fa-user"></i> {{ 'Profile' | translate }}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span><i class="fa fa-fw fa-envelope"></i> {{ 'Inbox' | translate }}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span><i class="fa fa-fw fa-gear"></i> {{ 'Settings' | translate }}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['/login']" (click)="onLoggedout()">
-                                <span><i class="fa fa-fw fa-power-off"></i> {{ 'Log Out' | translate }}</span>
-                            </a>
-                        </li>
-                    </ul>
+                <li>
+                    <a href="#/">
+                        <span class="d-block"><img src="/assets/images/icon8/icons8-computers-connecting.svg" class="menu-icon" alt="..."></span>
+                        <span>{{ 'Setup' | translate }}</span></a>
+    
                 </li>
-            </div>
-        </div>
-    </div>
-    <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
-        <i class="fa fa-fw fa-angle-double-left"></i>&nbsp;
-        <span>{{ 'Collapse Sidebar' | translate }}</span>
-    </div>
-</nav>
+                <li>
+                        <a href="#/">
+                            <span class="d-block">
+                                    <img src="/assets/images/icon8/icons8-search.svg" class="menu-icon" alt="...">
+                            </span>
+                            
+                            <span>{{ 'View' | translate }}</span></a>
+        
+                    </li>
+              
+                <li>
+                        <a href="#/">
+                        <span class="d-block"></span> <img src="/assets/images/icon8/icons8-user-account.svg" class="menu-icon" alt="...">
+                    
+                        <span>{{ 'Manager User' | translate }}</span></a>
+                </li>
+                <li>
+                        <a class="active" href="#/">
+                        <span class="d-block"><img src="/assets/images/icon8/icons8-database-administrator.svg" class="menu-icon" alt="..."></span>
+                        
+                     <span>{{ 'Reference Data' | translate }}</span></a>
+                </li>
+            </ul>
+            
+        </nav>
+</div>
+<div >
+        <nav class=" sidebar submenu-sidebar">         
+    
+                <ul class="list-unstyled components">
+        
+                    <li>
+                        <a href="#/">
+                            <img src="/assets/images/icon8/icons8-marker.svg" class="submenu-icon" alt="...">
+                            <span class="pl-3">{{ 'Location' | translate }}</span>
+                        </a>    
+                    </li>
+                    <li>
+                        <a href="#/"><img src="/assets/images/icon8/icons8-in-inventory.svg" class="submenu-icon" alt="...">
+                            <span class="pl-3">{{ 'Capabilities' | translate }}</span></a>
+        
+                    </li>                   
+                    <li>
+                        <a class="active" href="#/"> <img src="/assets/images/icon8/icons8-xls-import.svg" class="submenu-icon" alt="...">
+                            <span class="pl-3">{{ 'Application Type' | translate }}</span></a>
+                    </li>
+                    <li>
+                            <a class="active" href="#/"> <img src="/assets/images/icon8/icons8-template.svg" class="submenu-icon" alt="...">
+                                <span class="pl-3">{{ 'Logical Type' | translate }}</span></a>
+                        </li>
+                        <li>
+                                <a class="active" href="#/"> <img src="/assets/images/icon8/icons8-active-directory.svg" class="submenu-icon" alt="...">
+                                    <span class="pl-3">{{ 'Schema' | translate }}</span></a>
+                            </li>
+                            <li>
+                                    <a href="#/"><img src="/assets/images/icon8/icons8-xls-import.svg"  class="submenu-icon" alt="...">
+                                        <span class="pl-3">{{ 'IAG Data' | translate }}</span></a>
+                                </li>
+                       
+                        <li>
+                                <a href="#/">
+                                    <img src="/assets/images/icon8/icons8-geography.svg" class="submenu-icon" alt="...">
+                                    <span class="pl-3">{{ 'Region' | translate }}</span>
+                                </a>    
+                            </li>
+                </ul>
+                
+            </nav>
+</div>
+</div>

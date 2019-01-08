@@ -3,6 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ThemeService } from '../../../../shared/services/layout/theme.service';
 import { Observable, Subject } from 'rxjs';
+import { MsAdalAngular6Service } from 'microsoft-adal-angular6';
 
 @Component({
     selector: 'app-header',
@@ -16,6 +17,7 @@ export class HeaderComponent implements OnInit {
     loggedInEmail: string;
     isAdmin: boolean;
     icon: string;
+    airline:string;
 
     /*Theme Variables*/
     theme_id: string;
@@ -30,7 +32,8 @@ export class HeaderComponent implements OnInit {
     constructor(
         private translate: TranslateService,
         private themeService : ThemeService,
-        public router: Router
+        public router: Router,
+        private _adal:MsAdalAngular6Service
     ) {
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS']);
         this.translate.setDefaultLang('en');
@@ -49,11 +52,13 @@ export class HeaderComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.setThemes();
+       // this.setThemes();
         const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        this.logInName = "Prashant";
+        this.airline="British Airways"
         if(currentUser){
             this.userId = currentUser.userId;
-            this.logInName = currentUser.logInName;
+            this.logInName = "Prashant"//currentUser.logInName;
             this.loggedInEmail = currentUser.email;
             this.isAdmin = currentUser.isAdmin;
             this.icon = currentUser.icon;
@@ -94,6 +99,9 @@ export class HeaderComponent implements OnInit {
     }
 
     onLoggedout() {
+      
+        this._adal.logout();
+        
         localStorage.removeItem('isLoggedin');
     }
 

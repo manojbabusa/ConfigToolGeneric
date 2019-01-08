@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" version="1.1" width="40px" height="40px">
+<g id="surface1">
+<path style=" fill:#98CCFD;" d="M 16.5 28.5 L 23.5 28.5 L 23.5 34.5 L 16.5 34.5 Z "/>
+<path style=" fill:#4788C7;" d="M 23 29 L 23 34 L 17 34 L 17 29 L 23 29 M 24 28 L 16 28 L 16 35 L 24 35 Z "/>
+<path style=" fill:#FFFFFF;" d="M 1.5 4.5 L 38.5 4.5 L 38.5 30.5 L 1.5 30.5 Z "/>
+<path style=" fill:#4788C7;" d="M 38 5 L 38 30 L 2 30 L 2 5 L 38 5 M 39 4 L 1 4 L 1 31 L 39 31 Z "/>
+<path style=" fill:#98CCFD;" d="M 1.5 26.5 L 38.5 26.5 L 38.5 30.5 L 1.5 30.5 Z "/>
+<path style=" fill:#4788C7;" d="M 38 27 L 38 30 L 2 30 L 2 27 L 38 27 M 39 26 L 1 26 L 1 31 L 39 31 Z "/>
+<path style=" fill:#98CCFD;" d="M 9.5 36.5 L 9.5 36 C 9.5 34.621094 10.621094 33.5 12 33.5 L 28 33.5 C 29.378906 33.5 30.5 34.621094 30.5 36 L 30.5 36.5 Z "/>
+<path style=" fill:#4788C7;" d="M 28 34 C 29.101563 34 30 34.898438 30 36 L 10 36 C 10 34.898438 10.898438 34 12 34 L 28 34 M 28 33 L 12 33 C 10.34375 33 9 34.34375 9 36 L 9 37 L 31 37 L 31 36 C 31 34.34375 29.65625 33 28 33 Z "/>
+<path style=" fill:#FFFFFF;" d="M 36.5 29 L 34.5 29 C 34.222656 29 34 28.777344 34 28.5 C 34 28.222656 34.222656 28 34.5 28 L 36.5 28 C 36.777344 28 37 28.222656 37 28.5 C 37 28.777344 36.777344 29 36.5 29 Z "/>
+<path style=" fill:#DFF0FE;" d="M 11.5 9.5 L 28.5 9.5 L 28.5 22.5 L 11.5 22.5 Z "/>
+<path style=" fill:#4788C7;" d="M 28 10 L 28 22 L 12 22 L 12 10 L 28 10 M 29 9 L 11 9 L 11 23 L 29 23 Z "/>
+<path style=" fill:#4788C7;" d="M 11 9 L 29 9 L 29 12 L 11 12 Z "/>
+</g>
+</svg>

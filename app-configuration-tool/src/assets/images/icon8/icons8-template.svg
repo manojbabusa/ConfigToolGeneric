@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" version="1.1" width="40px" height="40px">
+<g id="surface1">
+<path style=" fill:#FFFFFF;" d="M 1.5 4.5 L 38.5 4.5 L 38.5 35.5 L 1.5 35.5 Z "/>
+<path style=" fill:#4788C7;" d="M 38 5 L 38 35 L 2 35 L 2 5 L 38 5 M 39 4 L 1 4 L 1 36 L 39 36 Z "/>
+<path style=" fill:#B6DCFE;" d="M 5 16 L 19 16 L 19 32 L 5 32 Z "/>
+<path style=" fill:#B6DCFE;" d="M 21 16 L 35 16 L 35 32 L 21 32 Z "/>
+<path style=" fill:#98CCFD;" d="M 5 8 L 35 8 L 35 14 L 5 14 Z "/>
+</g>
+</svg>
