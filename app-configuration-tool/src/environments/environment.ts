@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  adalConfig: {
+    tenant: '3b27d02e-0ad3-4e02-947d-dd47cf86624f',
+    clientId: '62374115-36a3-4cfa-a2ce-03ef0f2816be',
+    redirectUri: window.location.origin,
+    cacheLocation: 'localStorage',
+  },
 };
 
 /*

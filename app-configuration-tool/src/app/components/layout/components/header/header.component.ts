@@ -32,8 +32,8 @@ export class HeaderComponent implements OnInit {
     constructor(
         private translate: TranslateService,
         private themeService : ThemeService,
-        public router: Router,
-        private _adal:MsAdalAngular6Service
+      public router: Router,
+        private adalService:MsAdalAngular6Service
     ) {
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS']);
         this.translate.setDefaultLang('en');
@@ -52,24 +52,37 @@ export class HeaderComponent implements OnInit {
     }
 
     ngOnInit() {
-       // this.setThemes();
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        this.logInName = "Prashant";
-        this.airline="British Airways"
-        if(currentUser){
-            this.userId = currentUser.userId;
-            this.logInName = "Prashant"//currentUser.logInName;
-            this.loggedInEmail = currentUser.email;
-            this.isAdmin = currentUser.isAdmin;
-            this.icon = currentUser.icon;
+        //this.setThemes();
+        if(this.adalService.isAuthenticated){
+          this.userId = this.adalService.LoggedInUserName;
+          this.logInName = this.getFirstName(this.adalService.LoggedInUserName)+' '+this.getLastName(this.adalService.LoggedInUserName,' ');
+          this.loggedInEmail = this.adalService.LoggedInUserEmail;
         }
+  }
+
+  getFirstName = function (str) {
+    var arr = str.split(' ');
+    if (arr.length === 1) {
+      return arr[0];
     }
-    
+    return this.capitalizeFirstLetter(arr.slice(0, -1).join(' ')); // returns "Paul Steve"
+  }
+
+ 
+  getLastName = function (str, ifNone) {
+    var arr = str.split(' ');
+    if (arr.length === 1) {
+      return ifNone || "<None>";
+    }
+    return this.capitalizeFirstLetter(arr.slice(-1).join(' '));
+  }
+  capitalizeFirstLetter(string) {
+    return string.replace(/^./, string[0].toUpperCase());
+  }
      /*Method to get the themes list from the UiComponentsService and assign it to the themesList declared in this file.*/
      setThemes(): void {
         this.themeService.getThemesList().subscribe(data => {
             this.themesList = data;
-            //this.themeService.getInitalTheme("59897ca6a17fd4c3b9ca057f").subscribe(data => {
             const theme = data[0];
             this.themeName = theme.name;
         });
@@ -98,11 +111,9 @@ export class HeaderComponent implements OnInit {
         dom.classList.toggle('rtl');
     }
 
-    onLoggedout() {
-      
-        this._adal.logout();
-        
-        localStorage.removeItem('isLoggedin');
+  onLoggedout() {
+    this.adalService.logout();
+       // localStorage.removeItem('isLoggedin');
     }
 
     changeLang(language: string) {
