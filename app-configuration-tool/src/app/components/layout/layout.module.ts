@@ -9,14 +9,15 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FormsModule }   from '@angular/forms';
 import { ThemeService } from '../../shared/services/layout/theme.service';
-
 @NgModule({
     imports: [
         CommonModule,
         LayoutRoutingModule,
         TranslateModule,
         FormsModule,
-        NgbDropdownModule.forRoot()
+        NgbDropdownModule.forRoot(),
+        
+
     ],
     declarations: [LayoutComponent, SidebarComponent, HeaderComponent, SafePipe],
     providers: [ThemeService]

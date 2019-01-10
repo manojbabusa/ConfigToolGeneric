@@ -5,19 +5,19 @@
             <ul class="list-unstyled components">
     
                 <li>
-                    <a href="#/">
+                    <a [routerLink]="['/dashboard']">
                        <span class="d-block"><img src="/assets/images/icon8/icons8-speed.svg" class="menu-icon" alt="..."></span>
                         <span>{{ 'Dashboard' | translate }}</span>
                     </a>    
                 </li>
                 <li>
-                    <a href="#/">
+                    <a [routerLink]="['/dashboard']">
                         <span class="d-block"><img src="/assets/images/icon8/icons8-computers-connecting.svg" class="menu-icon" alt="..."></span>
                         <span>{{ 'Setup' | translate }}</span></a>
     
                 </li>
                 <li>
-                        <a href="#/">
+                        <a [routerLink]="['/dashboard']">
                             <span class="d-block">
                                     <img src="/assets/images/icon8/icons8-search.svg" class="menu-icon" alt="...">
                             </span>
@@ -27,13 +27,13 @@
                     </li>
               
                 <li>
-                        <a href="#/">
+                        <a [routerLink]="['/dashboard']">
                         <span class="d-block"></span> <img src="/assets/images/icon8/icons8-user-account.svg" class="menu-icon" alt="...">
                     
                         <span>{{ 'Manager User' | translate }}</span></a>
                 </li>
                 <li>
-                        <a class="active" href="#/">
+                        <a [routerLink]="['/referenceData']">
                         <span class="d-block"><img src="/assets/images/icon8/icons8-database-administrator.svg" class="menu-icon" alt="..."></span>
                         
                      <span>{{ 'Reference Data' | translate }}</span></a>
@@ -42,45 +42,50 @@
             
         </nav>
 </div>
-<div >
-        <nav class=" sidebar submenu-sidebar">         
+<div class="wrapper">
+        <nav class="submenu-sidebar">   
+            <div class="pt-3 pl-3">
+                <h4>{{ 'Reference Data' | translate }}</h4>
+            </div>      
     
-                <ul class="list-unstyled components">
+                <ul class="list-unstyled components ">
         
-                    <li>
-                        <a href="#/">
-                            <img src="/assets/images/icon8/icons8-marker.svg" class="submenu-icon" alt="...">
+                    <li  [routerLink]="['location']" routerLinkActive="selected-item">
+                            <a>
+                            <img src="/assets/images/icon8/icons8-marker.svg" class="submenu-icon ml-2" alt="...">
                             <span class="pl-3">{{ 'Location' | translate }}</span>
                         </a>    
                     </li>
-                    <li>
-                        <a href="#/"><img src="/assets/images/icon8/icons8-in-inventory.svg" class="submenu-icon" alt="...">
+                    <li [routerLink]="['capabilities']"  routerLinkActive="selected-item">
+                            <a >
+                                <img src="/assets/images/icon8/icons8-in-inventory.svg " class="submenu-icon ml-2" alt="...">
                             <span class="pl-3">{{ 'Capabilities' | translate }}</span></a>
         
                     </li>                   
-                    <li>
-                        <a class="active" href="#/"> <img src="/assets/images/icon8/icons8-xls-import.svg" class="submenu-icon" alt="...">
+                    <li  >
+                        <a  > <img src="/assets/images/icon8/icons8-xls-import.svg" class="submenu-icon ml-2" alt="...">
                             <span class="pl-3">{{ 'Application Type' | translate }}</span></a>
                     </li>
                     <li>
-                            <a class="active" href="#/"> <img src="/assets/images/icon8/icons8-template.svg" class="submenu-icon" alt="...">
+                            <a > <img src="/assets/images/icon8/icons8-template.svg" class="submenu-icon ml-2" alt="...">
                                 <span class="pl-3">{{ 'Logical Type' | translate }}</span></a>
                         </li>
                         <li>
-                                <a class="active" href="#/"> <img src="/assets/images/icon8/icons8-active-directory.svg" class="submenu-icon" alt="...">
+                                <a > <img src="/assets/images/icon8/icons8-active-directory.svg" class="submenu-icon ml-2" alt="...">
                                     <span class="pl-3">{{ 'Schema' | translate }}</span></a>
                             </li>
                             <li>
-                                    <a href="#/"><img src="/assets/images/icon8/icons8-xls-import.svg"  class="submenu-icon" alt="...">
+                                    <a ><img src="/assets/images/icon8/icons8-xls-import.svg"  class="submenu-icon ml-2" alt="...">
                                         <span class="pl-3">{{ 'IAG Data' | translate }}</span></a>
                                 </li>
                        
                         <li>
-                                <a href="#/">
-                                    <img src="/assets/images/icon8/icons8-geography.svg" class="submenu-icon" alt="...">
+                                <a >
+                                    <img src="/assets/images/icon8/icons8-geography.svg" class="submenu-icon ml-2" alt="...">
                                     <span class="pl-3">{{ 'Region' | translate }}</span>
                                 </a>    
                             </li>
+                            
                 </ul>
                 
             </nav>
