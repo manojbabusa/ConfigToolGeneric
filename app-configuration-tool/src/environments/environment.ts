@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   adalConfig: {
     tenant: '3b27d02e-0ad3-4e02-947d-dd47cf86624f',
-    clientId: '62374115-36a3-4cfa-a2ce-03ef0f2816be',
+    //clientId: '62374115-36a3-4cfa-a2ce-03ef0f2816be',
+    clientId:'e5ad3d77-0d56-42dc-b542-0fd8371a2a93',
     redirectUri: window.location.origin,
     cacheLocation: 'localStorage',
   },

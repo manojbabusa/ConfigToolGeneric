@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -9,11 +10,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { OpenCloseDirective } from '../app/shared/directives/open-close.directive';
 import { CommonModule } from '@angular/common';
-import { AuthGuard } from './shared/guard/auth.guard';
 import { HelperService } from './shared/services/helper.service';
-import { MsAdalAngular6Module,AuthenticationGuard } from 'microsoft-adal-angular6';
+import { MsAdalAngular6Module } from 'microsoft-adal-angular6';
 import { ADAuthenticationGuard } from './shared/guard/AD-authenication-guard';
 import { environment } from '../environments/environment';
+import { TokenInterceptor } from './shared/services/interceptor.service';
+import { RestApiService } from './shared/services/helper.httpServices';
 
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
@@ -32,6 +34,7 @@ export const createTranslateLoader = (http: HttpClient) => {
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    HttpModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -47,7 +50,11 @@ export const createTranslateLoader = (http: HttpClient) => {
     }),
     AppRoutingModule
   ],
-  providers: [AuthGuard,HelperService,ADAuthenticationGuard],
+  providers: [HelperService, ADAuthenticationGuard, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  },RestApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
