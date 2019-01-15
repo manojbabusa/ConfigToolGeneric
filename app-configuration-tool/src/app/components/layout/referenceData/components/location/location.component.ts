@@ -8,18 +8,19 @@ import { TestService } from 'src/app/shared/services/test.apiMethods';
 })
 export class LocationComponent implements OnInit {
 
-  constructor(private testService:TestService) { }
+  constructor(private testService: TestService) { }
   getItems: any[];
 
   ngOnInit() {
   }
 
   getItemsGET() {
-    this.testService.getItems().subscribe((data => {
-      this.getItems = data;
-    }
-    )
-    );
+    this.testService.getReferenceDataBearerToken();
+    //this.testService.getItems().subscribe((data => {
+      //this.getItems = data;
+    //}
+   // )
+    //);
   }
 
 }
